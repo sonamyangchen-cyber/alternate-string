@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alternate String Combiner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Alternate String Combiner</h1>
+
+    <label>Enter First String:</label>
+    <input type="text" id="string1">
+
+    <br><br>
+
+    <label>Enter Second String:</label>
+    <input type="text" id="string2">
+
+    <br><br>
+
+    <button onclick="combineStrings()">Combine Strings</button>
+
+    <h2>Result:</h2>
+    <p id="result"></p>
+
+    <script>
+        function combineStrings() {
+            let str1 = document.getElementById("string1").value;
+            let str2 = document.getElementById("string2").value;
+
+            let result = "";
+            let maxLength = Math.max(str1.length, str2.length);
+
+            for (let i = 0; i < maxLength; i++) {
+                if (i < str1.length) {
+                    result += str1[i];
+                }
+
+                if (i < str2.length) {
+                    result += str2[i];
+                }
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+
+</body>
+</html>
